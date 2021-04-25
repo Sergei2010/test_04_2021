@@ -1,0 +1,346 @@
+@font-face{
+    font-family: 'MuseoSansCyrl-300';
+    src: local('MuseoSansCyrl-300'),
+            url('../fonts/d4103f13fb50932c487c9fdda276c056/museosanscyrl-300.woff') format('woff'),
+            url('../fonts/d4103f13fb50932c487c9fdda276c056/museosanscyrl-300.woff2') format('woff2');
+}
+
+@font-face{
+    font-family: 'MuseoSansCyrl-700';
+    src: local('MuseoSansCyrl-700'),
+            url('../fonts/f5fe397cfb9277473ca0f219b71b85fe/museosanscyrl-700.woff') format('woff'),
+            url('../fonts/f5fe397cfb9277473ca0f219b71b85fe/museosanscyrl-700.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'LifehackSans Bold';
+    src: local('LifehackSans Bold'),
+            url('../fonts/LifehackSansBold/LifehackSans-Bold.woff') format('woff'),
+            url('../fonts/LifehackSansBold/LifehackSans-Bold.woff2') format('woff2');
+}
+
+body {
+    margin: 0;
+    /*font-family: 'MuseoSansCyrl-300', sans-serif;
+    font-size: 18px;*/
+    color: #e2e4e8;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* container */
+
+.container {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+/* intro */
+
+.intro {
+    width: 100%;
+    height: 100vh;
+    background: url("../images/intro.png") center no-repeat;
+    background-size: cover;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    height: 75px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: url("../images/header.png") center no-repeat;
+    background-size: cover;
+}
+
+.header a {
+    display: inline-block;
+    font-family: 'MuseoSansCyrl-300', sans-serif;
+    font-size: 18px;
+    color: #b1b7c3;
+    text-decoration: none;
+    padding-right: 50px;
+}
+
+.header a:last-child {
+    padding-right: 0;
+}
+
+.header a:hover {
+    text-decoration: underline;
+    color: #af7326;
+    transform: scale(1.03);
+}
+
+.header__inner {
+    height: 75px;
+    display: flex;
+}
+
+.header__inner nav {
+    margin: auto;
+}
+
+/* bar */
+
+.bar {
+    width: 100%;
+    height: 125px;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.bar__inner {
+    padding-top: 50px;
+}
+
+.bar__inner div {
+    display: inline-block;
+    font-family: 'MuseoSansCyrl-300', sans-serif;
+    color: #b4bed1;
+    vertical-align: middle;
+}
+
+.logo {
+    background: url("../images/logo.png") center no-repeat;
+    background-size: cover;
+    width: 225px;
+    height: 70px;
+}
+
+.school {
+    width: 200px;
+    font-size: 20px;
+    margin-right: 125px;
+}
+
+/* city menu */
+
+.city {
+    margin-right: 200px;
+}
+
+.city p {
+    font-size: 11px;
+    color: #7687a9;
+    text-align: left;
+}
+
+.city nav {
+    font-size: 20px;
+    color: #bbc4d5;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    transition: .4s ease-in-out;
+}
+
+.topmenu {
+    text-align: left;
+    padding: 10px 0;
+}
+
+.topmenu img {
+    margin-left: 16px;
+    margin-bottom: 3px;
+}
+
+.topmenu > li {
+    display: inline-block;
+    position: relative;
+}
+
+.topmenu > li:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 12px;
+    background: #d2d2d2;
+    top: 16px;
+    box-shadow: 4px -2px 0 #d2d2d2;
+    transform: rotate(30deg);
+}
+
+.topmenu > li:last-child:after {
+    background: none;
+    box-shadow: none;
+}
+
+.topmenu > li > a {
+    color: #bbc4d5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.topmenu li a:hover {
+    color: #af7326;
+    text-decoration: underline;
+}
+
+.submenu {
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 200px;
+    margin-left: -105px;
+    background: #fafafa;
+    border: 1px solid #ededed;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(.8);
+    transition: .4s ease-in-out;
+}
+
+.submenu li a {
+    padding: 10px 0;
+    margin: 0 10px;
+    border-bottom: 1px solid #efefef;
+    font-size: 16px;
+    color: #484848;
+}
+
+.topmenu > li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* call menu */
+
+.call-icon {
+    background: url("../images/phone.png") center no-repeat;
+    background-size: auto;
+    width: 58px;
+    height: 58px;
+    display: flex;
+}
+
+.call-icon img {
+    margin: auto 0;
+}
+
+.call-info {
+    margin-right: 46px;
+}
+
+.call-info p {
+    font-size: 11px;
+    color: #7687a9;
+    text-align: left;
+}
+
+.call-info a {
+    font-family: "MuseoSansCyrl-700", sans-serif;
+    font-size: 16px;
+    color: #bac1cd;
+    text-decoration: none;
+}
+
+.call-btn {
+    background: url("../images/call-btn.png") center no-repeat;
+    background-size: cover;
+    width: 230px;
+    height: 63px;
+}
+
+.call-btn p {
+    text-align: center;
+}
+
+/* intro */
+
+.main {
+    display: -webkit-inline-flex;
+    display: flex;
+    align-items: center;
+}
+
+.intro__left {
+    margin-top: 200px;
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.intro__left-hat {
+    margin-top: 30px;
+    margin-bottom: -30px;
+}
+
+.intro__left-student {
+    padding-left: 185px;
+    margin-top: -135px;
+    background-image: url("../images/ellipse.png"),
+                    url("../images/arrow-down.png"),
+                    url("../images/flip-through.png");
+    background-repeat: no-repeat;
+    background-position: 20% 50%, 21% 50%, 21% 35%;
+    z-index: 1000;
+}
+
+.intro__right {
+    text-align: right;
+    align-self: start;
+    margin-top: 210px;
+}
+
+.intro__right-lifehack {
+    font-family: "LifehackSans Bold", sans-serif;
+    font-size: 86px;
+    line-height: 24px;
+    color: #bbc4d5;
+}
+
+.intro__right-museo {
+    font-family: "MuseoSansCyrl-700", sans-serif;
+    font-size: 30px;
+    color: #b1b7c3;
+}
+
+.intro__right-btn {
+    background: url("../images/btn-write-down.png") center no-repeat;
+    background-size: cover;
+    margin-top: 55px;
+    margin-left: auto;
+    padding: 10px;
+    font-size: 22px;
+    width: 355px;
+    height: 92px;
+}
+
+.intro__right-btn-p {
+    text-align: center;
+}
+
+/* clouds */
+
+.clouds {
+    margin-top: -100px;
+}
+
